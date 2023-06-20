@@ -1,7 +1,11 @@
 from abc import ABC, abstractmethod
-from presenter import Presenter
+import Presenter
 
 class View():
+
+    def __init__(self):
+        """Конструктор"""
+        # self.View = View
 
     @abstractmethod
     def print(text):

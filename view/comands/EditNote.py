@@ -1,8 +1,8 @@
-from view.commands import Command
+from . import Comand
 from view import View
 
 
-class EditNote(Command):
+class EditNote(Comand):
 
     def __init__(self):
         """Конструктор"""
@@ -12,7 +12,7 @@ class EditNote(Command):
         return "Редактировать заметку"
 
     def execute():
-        View.editNote()
+        View.View.editNote()
 
-assert issubclass(EditNote, Command)
-assert isinstance(EditNote(), Command)
+assert issubclass(EditNote, Comand)
+assert isinstance(EditNote(), Comand)

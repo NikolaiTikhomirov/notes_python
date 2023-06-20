@@ -1,8 +1,8 @@
-from view.commands import Command
+from . import Comand
 from view import View
 
 
-class SaveChanges(Command):
+class SaveChanges(Comand):
 
     def __init__(self):
         """Конструктор"""
@@ -12,7 +12,7 @@ class SaveChanges(Command):
         return "Посмотреть заметки"
 
     def execute():
-        View.saveChanges()
+        View.View.saveChanges()
 
-assert issubclass(SaveChanges, Command)
-assert isinstance(SaveChanges(), Command)
+assert issubclass(SaveChanges, Comand)
+assert isinstance(SaveChanges(), Comand)

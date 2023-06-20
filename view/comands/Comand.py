@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Command():
+class Comand():
 
     def __init__(self):
         """Конструктор"""

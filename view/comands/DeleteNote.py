@@ -1,8 +1,8 @@
-from view.commands import Command
+from . import Comand
 from view import View
 
 
-class DeleteNote(Command):
+class DeleteNote(Comand):
 
     def __init__(self):
         """Конструктор"""
@@ -12,7 +12,7 @@ class DeleteNote(Command):
         return "Удалить заметку"
 
     def execute():
-        View.deleteNote()
+        View.View.deleteNote()
 
-assert issubclass(DeleteNote, Command)
-assert isinstance(DeleteNote(), Command)
+assert issubclass(DeleteNote, Comand)
+assert isinstance(DeleteNote(), Comand)
