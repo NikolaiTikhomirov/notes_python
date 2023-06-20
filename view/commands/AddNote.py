@@ -4,8 +4,9 @@ from view import View
 
 class AddNote(Command):
 
-    def __init__(self, View):
-        self.View = View
+    def __init__(self):
+        """Конструктор"""
+        # self.View = View
 
     def getDescription():
         return "Добавить заметку"

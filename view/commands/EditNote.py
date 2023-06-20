@@ -4,6 +4,10 @@ from view import View
 
 class EditNote(Command):
 
+    def __init__(self):
+        """Конструктор"""
+        # self.View = View
+
     def getDescription():
         return "Редактировать заметку"
 
