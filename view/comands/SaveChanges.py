@@ -1,5 +1,5 @@
-from . import Comand
-from view import View
+from view.comands.Comand import Comand
+from view.View import View
 
 
 class SaveChanges(Comand):
@@ -8,11 +8,11 @@ class SaveChanges(Comand):
         """Конструктор"""
         # self.View = View
 
-    def getDescription():
-        return "Посмотреть заметки"
+    def getDescription(self):
+        return "Сохранить изменения"
 
-    def execute():
-        View.View.saveChanges()
+    def execute(self, console):
+        console.saveChanges()
 
 assert issubclass(SaveChanges, Comand)
 assert isinstance(SaveChanges(), Comand)

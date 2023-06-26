@@ -1,17 +1,14 @@
-# from model.Model import Modeler
-# from view.View import View
 # from view.Console import Consoler
+# from presenter.Presenter import Presenterer
 
+class Modeler:
 
-class Presenterer:
-
-    def __init__(self, console, model):
+    def __init__(self): #, consoler, presenterer'''):
         """Конструктор"""
-        # self.view = View()
-        self.console = console
-        self.model = model
-        self.console.setPresenter(self)
+        # self.view = consoler
+        # self.presenter = presenterer
 
+    
     def addNote():
         """Добавить заметку"""
 
@@ -26,8 +23,6 @@ class Presenterer:
 
     def saveChanges():
         """Сохранить изменения"""
-
-
 
 if __name__ == "__main__":
     pass

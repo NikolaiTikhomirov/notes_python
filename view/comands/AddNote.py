@@ -1,5 +1,5 @@
-from Comand import *
-from ...view.View import *
+from view.comands.Comand import Comand
+# from view.Console import Consoler
 
 
 class AddNote(Comand):
@@ -7,13 +7,13 @@ class AddNote(Comand):
 
     def __init__(self):
         """Конструктор"""
-        # self.view = View()
+        # self.console = console
 
-    def getDescription():
+    def getDescription(self):
         return "Добавить заметку"
 
-    def execute(self):
-        View.addNote()
+    def execute(self, console):
+        console.addNote()
 
 assert issubclass(AddNote, Comand)
 assert isinstance(AddNote(), Comand)

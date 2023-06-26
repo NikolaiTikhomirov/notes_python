@@ -1,5 +1,5 @@
-from . import Comand
-from view import View
+from view.comands.Comand import Comand
+from view.View import View
 
 
 class GetNotesList(Comand):
@@ -8,11 +8,11 @@ class GetNotesList(Comand):
         """Конструктор"""
         # self.View = View
 
-    def getDescription():
+    def getDescription(self):
         return "Посмотреть заметки"
 
-    def execute():
-        View.View.getNotesList()
+    def execute(self, console):
+        console.getNotesList()
 
 assert issubclass(GetNotesList, Comand)
 assert isinstance(GetNotesList(), Comand)

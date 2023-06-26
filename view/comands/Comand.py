@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Comand():
 
-    def __init__(self):
+    def __init__():
         """Конструктор"""
         # self.View = View
 

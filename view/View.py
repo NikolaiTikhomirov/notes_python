@@ -1,11 +1,10 @@
 from abc import ABC, abstractmethod
-import Presenter
 
-class View():
+class View:
 
     def __init__(self):
         """Конструктор"""
-        # self.View = View
+
 
     @abstractmethod
     def print(text):
@@ -42,3 +41,6 @@ class View():
     @abstractmethod
     def finish():
         """Завершить приложение"""
+
+if __name__ == "__main__":
+    pass

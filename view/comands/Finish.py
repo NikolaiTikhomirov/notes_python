@@ -1,5 +1,5 @@
-from . import Comand
-from view import View
+from view.comands.Comand import Comand
+from view.View import View
 
 
 class Finish(Comand):
@@ -8,11 +8,11 @@ class Finish(Comand):
         """Конструктор"""
         # self.View = View
 
-    def getDescription():
+    def getDescription(self):
         return "Завершить работу приложения"
 
-    def execute():
-        View.View.finish()
+    def execute(self, console):
+        console.finish()
 
 assert issubclass(Finish, Comand)
 assert isinstance(Finish(), Comand)
