@@ -1,5 +1,6 @@
 # from view.Console import Consoler
 # from presenter.Presenter import Presenterer
+from model.FileHandler import FileHandler
 
 class Modeler:
 
@@ -7,10 +8,15 @@ class Modeler:
         """Конструктор"""
         # self.view = consoler
         # self.presenter = presenterer
+        filePath = "notes.csv"
+        self.notebook = FileHandler.read(filePath)
 
     
-    def addNote():
+    def addNote(self, id, title, body, date):
         """Добавить заметку"""
+        note = [id, title, body, date]
+        self.notebook.append(note)
+
 
     def deleteNote():
         """Удалить заметку"""
