@@ -1,7 +1,8 @@
 # from ..model.Model import Model
+# from presenter.Presenter import Presenterer
 from view.View import View
 from view.MainMenu import MainMenu
-# from presenter.Presenter import Presenterer
+import datetime
 
 class Consoler(View):
     __INPUT_ERROR = "Введенные данные некорректны, попробуйте еще раз"
@@ -33,7 +34,15 @@ class Consoler(View):
 
     def addNote(self):
         """Добавить заметку"""
-        print("будем добавлять заметку") 
+        addNoteWork = True
+        while(addNoteWork):
+            id = self.presenter.getNotebookLength() + 1
+            title = input("Введите заголовок заметки:\n")
+            body = input("Введите тело заметки:\n")
+            date = datetime.datetime.now()
+            self.presenter.addNote(id, title, body, date)
+            addNoteWork = False
+        # print("будем добавлять заметку")
 
     def deleteNote(self):
         """Удалить заметку"""
@@ -45,11 +54,13 @@ class Consoler(View):
 
     def getNotesList(self):
         """Посмотреть заметки"""
-        print("будем показывать заметки") 
+        self.presenter.getNotesList()
+        # print("будем показывать заметки")
 
     def saveChanges(self):
         """Сохранить изменения"""
-        print("будем сохранять заметки") 
+        self.presenter.saveChanges()
+        # print("будем сохранять заметки") 
 
     def finish(self):
         """Завершить приложение"""

@@ -8,14 +8,15 @@ class Modeler:
         """Конструктор"""
         # self.view = consoler
         # self.presenter = presenterer
-        filePath = "notes.csv"
-        self.notebook = FileHandler.read(filePath)
+        self.filePath = "notes.csv"
+        self.notebook = FileHandler.read(self.filePath)
 
     
     def addNote(self, id, title, body, date):
         """Добавить заметку"""
         note = [id, title, body, date]
-        self.notebook.append(note)
+        # print(type(self.notebook))
+        self.notebook.addNoteToBook(note)
 
 
     def deleteNote():
@@ -24,11 +25,22 @@ class Modeler:
     def editNote():
         """Редактировать заметку"""
 
-    def getNotesList():
+    def getNotesList(self):
         """Посмотреть заметки"""
+        return self.notebook
 
-    def saveChanges():
+    def saveChanges(self):
         """Сохранить изменения"""
+        FileHandler.save(self.filePath, self.notebook)
+
+    def getNotebookLength(self):
+        """Возвращает колличество заметок в записной книжке"""
+        res = 0
+        try:
+            res = len(self.notebook)
+        except:
+            pass
+        return res
 
 if __name__ == "__main__":
     pass

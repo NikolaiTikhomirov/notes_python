@@ -1,11 +1,12 @@
 import csv
 from model.Note import Note
+from model.Notebook import Notebook
 
 class FileHandler:
 
     def save(filePath, data):
         try:
-            with open('some.csv', 'w', newline='') as f:
+            with open(filePath, 'w', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerows(data)
         except:
@@ -13,16 +14,18 @@ class FileHandler:
     
 
     def read(filePath):
+        notebook = Notebook()
         try:
             with open(filePath, newline='') as f:
                 reader = csv.reader(f)
                 for row in reader:
-                    print(row)
+                    notebook.append(row)
+                return notebook
         except:
-            note = Note()
-            FileHandler.save(filePath, note)
+            
+            FileHandler.save(filePath, notebook)
             print("Создана новая записная книжка")
-            return note
+            return notebook
 
 if __name__ == "__main__":
     pass

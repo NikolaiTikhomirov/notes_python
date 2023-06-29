@@ -1,6 +1,7 @@
 # from model.Model import Modeler
 # from view.View import View
 # from view.Console import Consoler
+# from model.Notebook import Notebook
 
 
 class Presenterer:
@@ -12,8 +13,9 @@ class Presenterer:
         self.model = model
         self.console.setPresenter(self)
 
-    def addNote():
+    def addNote(self, id, title, body, date):
         """Добавить заметку"""
+        self.model.addNote(id, title, body, date)
 
     def deleteNote():
         """Удалить заметку"""
@@ -21,11 +23,16 @@ class Presenterer:
     def editNote():
         """Редактировать заметку"""
 
-    def getNotesList():
+    def getNotesList(self):
         """Посмотреть заметки"""
+        print(self.model.getNotesList())
 
-    def saveChanges():
+    def saveChanges(self):
         """Сохранить изменения"""
+        self.model.saveChanges()
+
+    def getNotebookLength(self):
+        return self.model.getNotebookLength()
 
 
 
