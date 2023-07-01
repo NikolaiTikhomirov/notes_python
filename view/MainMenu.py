@@ -33,19 +33,12 @@ class MainMenu():
 
     def print(self):
         comandListBuilder = ""
-        # comandListBuilder = []
         for i in range(len(self.__comandList)):
             comandListBuilder += str(i+1)
             comandListBuilder += ". "
             comandListBuilder += self.__comandList[i].getDescription()
             comandListBuilder += "\n"
-            # comandListBuilder.append(i+1)
-            # comandListBuilder.append(". ")
-            # comandListBuilder.append(self.__comandList[i].getDescription())
-            # comandListBuilder.append("\n")
-        
-        # commandListBuilder.deleteCharAt(commandListBuilder.length()-1)
-        return print(comandListBuilder) # commandListBuilder.toString()
+        return print(comandListBuilder)
     
 
     def execute(self, numComand, console):

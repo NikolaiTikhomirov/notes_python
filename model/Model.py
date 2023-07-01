@@ -1,6 +1,8 @@
 # from view.Console import Consoler
 # from presenter.Presenter import Presenterer
 from model.FileHandler import FileHandler
+from model.Notebook import Notebook
+from model.Note import Note
 
 class Modeler:
 
@@ -27,7 +29,7 @@ class Modeler:
 
     def getNotesList(self):
         """Посмотреть заметки"""
-        return self.notebook
+        print(Notebook.toString(self.notebook))
 
     def saveChanges(self):
         """Сохранить изменения"""
@@ -41,6 +43,7 @@ class Modeler:
         except:
             pass
         return res
+    
 
 if __name__ == "__main__":
     pass

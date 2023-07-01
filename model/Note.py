@@ -44,6 +44,19 @@ class Note:
     
     def getDate(self):
         return self.date
+        
+    # def getNotesFieldes(self):
+    #     for i in self:
+    #         id = Note.getId(i)
+    #         title = Note.getTitle(i)
+    #         body = Note.getBody(i)
+    #         date = Note.getDate(i)
+
+    def toString(note):
+        res = ""
+        for i in range(len(note)):
+            res += str(note[i]) + "|"
+        return res
 
 if __name__ == "__main__":
     pass
